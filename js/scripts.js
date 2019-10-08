@@ -29,3 +29,16 @@
 
   $modalContainer.add('is-visible');
 });
+
+function hideModal() {
+  var $modalContainer = $('#modal-container');
+  $modalContainer.remove('is-visible');
+};
+
+window.$('kedown', (e) => {
+  var $modalContainer = $('#modal-container');
+  if(e.key === 'Escape' && $modalContainer.contains('is-visible'))
+  {
+    hideModal();
+  }
+});
