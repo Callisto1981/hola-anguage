@@ -6,7 +6,7 @@
   var $modal = $('div');
   $modal.addClass('modal');
 
-  var $closeButtonElement = $('<button class='modal-close'>'Close</div>');
+  var $closeButtonElement = $('<button class= modal-close>Close</div>');
   $('click').append($closeButtonElement);
   /*$closeButtonElement.addClass('modal-close');
   $closeButtonElement.innerText = 'Close';
@@ -18,7 +18,7 @@
   var $heightElement = $('<p>height</p>');
   //$heightElement.innerText =height;
 
-  var $imageElement = $('<img src=''>');
+  var $imageElement = $('<img src=>');
   //$imageElement.src = /*dog-image*/;
 
   $modal.append($closeButtonElement);
