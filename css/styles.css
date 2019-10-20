@@ -1,5 +1,15 @@
 
 html,
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Grenze', serif;
+  font-weight: 400;
+}
+
+#modal-container {
+  display: none;
+}
+
+
+#modal-container.is-visible {
+  display: block;
 }
