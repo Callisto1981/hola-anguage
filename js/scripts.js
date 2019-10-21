@@ -1,4 +1,4 @@
-  (function showModal(/*title, content, dog-image*/) {
+  (function $showModal($pokemon, $height, $image) {
     var $modalContainer = $('#modal-container');
     $modalContainer.addClass('is-visible');
     $modalContainer.innerHTML = '';
@@ -6,28 +6,31 @@
     var $modal = $('div');
     $modal.addClass('modal');
 
-    var $closeButtonElement = $('<button class='modal-close'>'Close</div>');
-    $('click').append($closeButtonElement);
-    /*$closeButtonElement.addClass('modal-close');
-    $closeButtonElement.innerText = 'Close';
-    $closeButtonElement.$('click', hideModal);*/
-    var $nameElement = $('<h1>title</h1>');
-    //$nameElement.innerText = title;
-    var $heightElement = $('<p>height</p>');
-    //$heightElement.innerText =height;
-    var $imageElement = $('<img src=''>');
-    //$imageElement.src = /*dog-image*/;
-    $modal.append($closeButtonElement);
-    $modal.append($nameElement);
-    $modal.append($heightElement);
-    $modal.append($imageElement);
+    var $closeButton = $('<button class="modal-close">Close</button>');
+    $('click').append($closeButton);
+    $closeButton.addClass('modal-close');
+    $closeButton.innerText = 'Close';
+    $closeButton.$('click', hideModal);
+
+    var $name = $('<h1>title</h1>');
+    $name.innerText = title;
+
+    var $height = $('<p>height</p>');
+    $height.innerText =height;
+
+    var $image = $('<img src=#>');
+    $image.src = 'https://pokeapi.co/api/v2/pokemon/';
+    $modal.append($closeButton);
+    $modal.append($name);
+    $modal.append($height);
+    $modal.append($image);
     $modalContainer.append(modal);
     $modalContainer.add('is-visible');
   });
 
 
 
-  function hideModal() {
+  function $hideModal() {
     var $modalContainer = $('#modal-container');
     $modalContainer.remove('is-visible');
   };
@@ -51,23 +54,24 @@
   var pokemonRepository = (function() {
     var repository = [];
 
-    function $loadlist(item) {
+    function loadList(item) {
+      var $loadList = item.loadList;
       $.ajax('https://pokeapi.co/api/v2/pokemon/', { dataType: 'json'}).then(function(responseJSON) {
        console.log(responseJSON);
      }).catch(function(err){
        console.log('Caught an error:' + err.statusText);
      });
-   )}
+   }
 
-   function add(pokemon) {
+   function $add(pokemon) {
      repository.push(pokemon)
    }
 
-  function getAll() {
+  function $getAll() {
     return repository;
   }
 
-  function loadDetails(pokemon) {
+  function $loadDetails(pokemon) {
     var url = pokemon.detailsUrl;
     return $.ajax(url).then(function(response) {
       return response.json();
@@ -82,8 +86,8 @@
     });
   }
 
-  function $addListItem(pokmeon) {
-    var $pokemonList = $('<button type='button' class='pokemon-list');
+  function $addListItem(pokemon) {
+    var $pokemonList = $('<button type=button class=pokemon-list>pokemon_list</button>');
     var $listItem = $('li'); //Not sure how to incert this.
     button.innerText = pokemon.name;
     button.addClass('pokemonButton');
@@ -93,8 +97,8 @@
     });
   }
   function $showDetails(pokemon) {
-    $loadDetials(pokemon).then ('click', function(event) {
-    showModal(pokemon.name, pokemon.height, pokemon.imageUrl));
+    $loadDetails(pokemon).then ('click', function(event) {
+    showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
   });
   return {
     add: add,
@@ -106,7 +110,7 @@
   };
   });
   const poke = pokemonRepository();
-  poke.loadList().then(function() {
+  $loadList().then(function() {
     poke.getAll().each(function (item) {
       poke.add(item);
     });
