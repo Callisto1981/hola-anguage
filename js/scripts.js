@@ -125,7 +125,7 @@ var pokemonRepository = (function() {
       add: add,
       getAll: getAll,
       addListItem: addListItem,
-      loadList: loadList,
+      loadList: $loadList,
       loadDetails: loadDetails,
       showModal: showModal,
       hideModal: hideModal,
@@ -134,7 +134,7 @@ var pokemonRepository = (function() {
 });
 
 const poke = pokemonRepository();
-pokemonRepository.$loadList().then(function() {
+$loadList().then(function() {
   poke.getAll().forEach(function (item) {
     poke.add(item);
   });
