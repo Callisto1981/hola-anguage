@@ -1,71 +1,75 @@
-  (function $showModal($pokemon, $height, $image) {
-    var $modalContainer = $('#modal-container');
-    $modalContainer.addClass('is-visible');
-    $modalContainer.innerHTML = '';
+(function $showModal($pokemon, $height, $image) {
+  var $modalContainer = $('#modal-container');
+  $modalContainer.addClass('is-visible');
+  $modalContainer.innerHTML = '';
 
-    var $modal = $('div');
-    $modal.addClass('modal');
+  var $modal = $('div');
+  $modal.addClass('modal');
 
-    var $closeButton = $('<button class="modal-close">Close</button>');
-    $('click').append($closeButton);
-    $closeButton.addClass('modal-close');
-    $closeButton.innerText = 'Close';
-    $closeButton.$('click', hideModal);
+  var $closeButton = $('<button class="modal-close">Close</button>');
+  $('click').append($closeButton);
+  $closeButton.addClass('modal-close');
+  $closeButton.innerText = 'Close';
+  $closeButton.$('click', hideModal);
 
-    var $name = $('<h1>title</h1>');
-    $name.innerText = title;
+  var $name = $('<h1>title</h1>');
+  $name.innerText = title;
 
-    var $height = $('<p>height</p>');
-    $height.innerText =height;
+  var $height = $('<p>height</p>');
+  $height.innerText =height;
 
-    var $image = $('<img src=#>');
-    $image.src = 'https://pokeapi.co/api/v2/pokemon/';
-    $modal.append($closeButton);
-    $modal.append($name);
-    $modal.append($height);
-    $modal.append($image);
-    $modalContainer.append(modal);
-    $modalContainer.add('is-visible');
-  });
-
-
-
-  function $hideModal() {
-    var $modalContainer = $('#modal-container');
-    $modalContainer.remove('is-visible');
-  };
-  window.$('kedown', (e) => {
-    var $modalContainer = $('#modal-container');
-    if(e.key === 'Escape' && $modalContainer.contains('is-visible'))
-    {
-      hideModal();
-    }
-  });
+  var $image = $('<img src=#>');
+  $image.src = 'https://pokeapi.co/api/v2/pokemon/';
+  $modal.append($closeButton);
+  $modal.append($name);
+  $modal.append($height);
+  $modal.append($image);
+  $modalContainer.append(modal);
+  $modalContainer.add('is-visible');
+});
 
 
-  var $modalContainer = $('pokemon_list');
-  $modalContainer = $('click', (e) => {
-    var target= e.target;
-    if(target === $modalContainer) {
-      hideModal();
-    }
-  });
-  var apiUrl =('https://pokeapi.co/api/v2/pokemon/')
-  var pokemonRepository = (function() {
-    var repository = [];
 
-    function loadList(item) {
-      var $loadList = item.loadList;
-      $.ajax('https://pokeapi.co/api/v2/pokemon/', { dataType: 'json'}).then(function(responseJSON) {
-       console.log(responseJSON);
-     }).catch(function(err){
-       console.log('Caught an error:' + err.statusText);
-     });
-   }
+function $hideModal() {
+  var $modalContainer = $('#modal-container');
+  $modalContainer.remove('is-visible');
+};
+window.$('keydown', (e) => {
+  var $modalContainer = $('#modal-container');
+  if(e.key === 'Escape' && $modalContainer.contains('is-visible'))
+  {
+    hideModal();
+  }
+});
 
-   function $add(pokemon) {
-     repository.push(pokemon)
-   }
+
+var $modalContainer = $('pokemon_list');
+$modalContainer = $('click', (e) => {
+  var target= e.target;
+  if(target === $modalContainer) {
+    hideModal();
+  }
+});
+
+
+var apiUrl =('https://pokeapi.co/api/v2/pokemon/')
+var pokemonRepository = (function() {
+  var repository = [];
+
+
+
+  function $loadList(pokemon) {
+    var loadList = pokemon.item;
+    $.ajax('https://pokeapi.co/api/v2/pokemon/', { dataType: 'json'}).then(function(responseJSON) {
+      console.log(responseJSON);
+    }).catch(function(err){
+      console.log('Caught an error:' + err.statusText);
+    });
+  }
+
+  function $add(pokemon) {
+    repository.push(pokemon)
+  }
 
   function $getAll() {
     return repository;
@@ -98,20 +102,21 @@
   }
   function $showDetails(pokemon) {
     $loadDetails(pokemon).then ('click', function(event) {
-    showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
-  });
-  return {
-    add: add,
-    getAll: getAll,
-    addListItem: addListItem,
-    loadList: loadList,
-    loadDetails: loadDetails,
-  };
-  };
-  });
-  const poke = pokemonRepository();
-  $loadList().then(function() {
-    poke.getAll().each(function (item) {
-      poke.add(item);
+      showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
     });
+    return {
+      add: add,
+      getAll: getAll,
+      addListItem: addListItem,
+      loadList: loadList,
+      loadDetails: loadDetails,
+    };
+  };
+});
+
+const poke = pokemonRepository();
+$loadList().then(function() {
+  poke.getAll().each(function (item) {
+    poke.add(item);
   });
+});
