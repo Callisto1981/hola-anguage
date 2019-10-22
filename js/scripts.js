@@ -1,4 +1,4 @@
-(function $showModal($pokemon, $height, $image) {
+function $showModal($pokemon, $height, $image) {
   var $modalContainer = $('#modal-container');
   $modalContainer.addClass('is-visible');
   $modalContainer.innerHTML = '';
@@ -10,7 +10,7 @@
   $('click').append($closeButton);
   $closeButton.addClass('modal-close');
   $closeButton.innerText = 'Close';
-  $closeButton.$('click', hideModal);
+  $closeButton.$('click', 'hideModal');
 
   var $name = $('<h1>title</h1>');
   $name.innerText = title;
@@ -20,13 +20,14 @@
 
   var $image = $('<img src=#>');
   $image.src = 'https://pokeapi.co/api/v2/pokemon/';
-  $modal.append($closeButton);
+  $modal.append($closeButton);// maybe there needs to be a pokemon. added to each item in the parenthesis?.
   $modal.append($name);
   $modal.append($height);
   $modal.append($image);
   $modalContainer.append(modal);
   $modalContainer.add('is-visible');
-});
+};
+
 
 
 
@@ -34,6 +35,7 @@ function $hideModal() {
   var $modalContainer = $('#modal-container');
   $modalContainer.remove('is-visible');
 };
+
 window.$('keydown', (e) => {
   var $modalContainer = $('#modal-container');
   if(e.key === 'Escape' && $modalContainer.contains('is-visible'))
@@ -59,13 +61,21 @@ var pokemonRepository = (function() {
 
 
   function $loadList(pokemon) {
-    var loadList = pokemon.item;
-    $.ajax('https://pokeapi.co/api/v2/pokemon/', { dataType: 'json'}).then(function(responseJSON) {
-      console.log(responseJSON);
-    }).catch(function(err){
-      console.log('Caught an error:' + err.statusText);
+    return $.ajax('https://pokeapi.co/api/v2/pokemon/', { dataType: 'json'}).then(function(responseJSON) {
+      return responseJSON;
+    }).then(function(json) {
+      json.results.forEach(function(item) {
+        var pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+      });
+    }).catch(function(e) {
+      console.error(e);
     });
   }
+
 
   function $add(pokemon) {
     repository.push(pokemon)
@@ -77,8 +87,8 @@ var pokemonRepository = (function() {
 
   function $loadDetails(pokemon) {
     var url = pokemon.detailsUrl;
-    return $.ajax(url).then(function(response) {
-      return response.json();
+    return $.ajax('https://pokeapi.co/api/v2/pokemon/', { dataType: 'json'}).then(function(responseJSON) {
+      return responseJSON;
     }).then(function (details) {
       pokemon.name = details.name;
       pokemon.imageUrl = details.sprites.front_default;
@@ -89,6 +99,8 @@ var pokemonRepository = (function() {
       console.error(e);
     });
   }
+
+
 
   function $addListItem(pokemon) {
     var $pokemonList = $('<button type=button class=pokemon-list>pokemon_list</button>');
@@ -119,4 +131,4 @@ $loadList().then(function() {
   poke.getAll().each(function (item) {
     poke.add(item);
   });
-});
+});*/
