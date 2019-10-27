@@ -1,16 +1,17 @@
 pokemonRepository = (function () {
     var repository = [];
 
-
     function showModal(pokName, height) {
-      var $modalContainer = document.querySelector('#modal-container');
+      var $modalContainer = $('#modal-container');
       $modalContainer.innerHTML = '';
-      $modalContainer.appendChild(modal);
 
-      var modal = document.createElement('div');
-      modal.classList.add('modal');
+      var $modal = document.createElement('<div class="modal"></div>');
+      $('body').append($modal);
 
-      var closeButtonElement = document.createElement('button');
+      //modal.classList.add('modal');
+      //$modalContainer.appendChild($modal);
+
+      var $closeButtonElement = document.createElement('button');
       closeButtonElement.classList.add('modal-close');
       closeButtonElement.innerText = 'Close';
       closeButtonElement.addEventListener('click', hideModal);
