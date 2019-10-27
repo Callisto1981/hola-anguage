@@ -5,7 +5,7 @@ pokemonRepository = (function () {
       var $modalContainer = $('#modal-container');
       $modalContainer.innerHTML = '';
 
-      var $modal = document.createElement('<div class="modal"></div>');
+      var $modal = $('<div class="modal"></div>');
       $('body').append($modal);
       //modal.classList.add('modal');
       //$modalContainer.appendChild($modal);
