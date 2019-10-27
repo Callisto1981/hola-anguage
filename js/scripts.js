@@ -44,8 +44,9 @@ pokemonRepository = (function () {
 
 
     function hideModal() {
-      var $modalContainer = document.querySelector('#modal-container');
-      $modalContainer.classList.remove('is-visible');
+      var $modalContainer = $('#modal-container');
+      //$modalContainer.classList
+      .removeClass('is-visible');
     }
 
 
