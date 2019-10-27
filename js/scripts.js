@@ -7,7 +7,6 @@ pokemonRepository = (function () {
 
       var $modal = document.createElement('<div class="modal"></div>');
       $('body').append($modal);
-
       //modal.classList.add('modal');
       //$modalContainer.appendChild($modal);
 
@@ -15,13 +14,15 @@ pokemonRepository = (function () {
       $('body').append($closeButtonElement);
       //closeButtonElement.classList.add('modal-close');
       //closeButtonElement.innerText = 'Close';
-      closeButtonElement.addEventListener('click', hideModal);
+
+      closeButtonElement.addEventListener('click', hideModal); //How do I impliment an addEventListener?
       //modal.appendChild(closeButtonElement);
 
-      var pokName = document.createElement('h1');
-      pokName.innerText = item.name;
-      pokName.classList.add('modal-name');
-      modal.appendChild(pokName);
+      var $pokName = $('<h1 class="modal-name"></h1>');
+      $('body').append('$pokName');
+      //pokName.innerText = item.name;
+      //pokName.classList.add('modal-name');
+      //modal.appendChild(pokName);
 
       var height = document.createElement('p');
       height.innerText = height;
