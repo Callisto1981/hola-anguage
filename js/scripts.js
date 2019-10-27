@@ -15,7 +15,7 @@ pokemonRepository = (function () {
       //closeButtonElement.classList.add('modal-close');
       //closeButtonElement.innerText = 'Close';
 
-      closeButtonElement.addEventListener('click', hideModal); //How do I impliment an addEventListener?
+      $closeButtonElement.on('click', hideModal); //put $closeButtonElement in ()?
       //modal.appendChild(closeButtonElement);
 
       var $pokName = $('<h1 class="modal-name"></h1>');
