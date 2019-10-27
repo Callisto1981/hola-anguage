@@ -38,15 +38,16 @@ pokemonRepository = (function () {
       $modalContainer.classList.add('is-visible');
     }
 
-    document.querySelector('#show-modal').addEventListener('click', () => {
+    $('#show-modal').on('click', () => {
       showModal('Name', 'Content');
     });
 
 
-    function hideModal() {
+    function $hideModal() {
       var $modalContainer = $('#modal-container');
       //$modalContainer.classList
       $('body').removeClass('is-visible');//Not sure if adding Body is correct?
+      $hideModal.fadeOut(2000);//For a fadeout effect.
     }
 
 
