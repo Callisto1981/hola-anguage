@@ -19,23 +19,22 @@ pokemonRepository = (function () {
       //modal.appendChild(closeButtonElement);
 
       var $pokName = $('<h1 class="modal-name"></h1>');
-      $('body').append('$pokName');
+      $('body').append($pokName);//might need a period at the beginning of $pokName
       //pokName.innerText = item.name;
       //pokName.classList.add('modal-name');
       //modal.appendChild(pokName);
 
-      var height = document.createElement('p');
-      height.innerText = height;
-      height.classList.add('modal-height');
-      modal.appendChild(height);
+      var $height = $('<p class="modal-height">Height: </p>');
+      $('body').append($height);
+      //height.innerText = height;
+      //height.classList.add('modal-height');
+      //modal.appendChild(height);
 
-      var pokImage = document.createElement('img');
-      pokImage.classList.add('pokemon-img');
-      pokImage.setAttribute('src', item.imageUrl);
-      modal.appendChild(pokImage);
-
-
-
+      var $pokImage = $('<img src= class="pokemon-img">');//Put actual apiUrl in src?
+      $('body').append($pokImage);
+      //pokImage.classList.add('pokemon-img');
+      //pokImage.setAttribute('src', item.imageUrl);
+      //modal.appendChild(pokImage);
       $modalContainer.classList.add('is-visible');
     }
 
