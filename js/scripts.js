@@ -46,7 +46,7 @@ pokemonRepository = (function () {
     function hideModal() {
       var $modalContainer = $('#modal-container');
       //$modalContainer.classList
-      .removeClass('is-visible');
+      $('body').removeClass('is-visible');//Not sure if adding Body is correct?
     }
 
 
