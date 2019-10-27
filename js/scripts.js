@@ -11,11 +11,12 @@ pokemonRepository = (function () {
       //modal.classList.add('modal');
       //$modalContainer.appendChild($modal);
 
-      var $closeButtonElement = document.createElement('button');
-      closeButtonElement.classList.add('modal-close');
-      closeButtonElement.innerText = 'Close';
+      var $closeButtonElement = $('<button class="modal-close">Close</button>');
+      $('body').append($closeButtonElement);
+      //closeButtonElement.classList.add('modal-close');
+      //closeButtonElement.innerText = 'Close';
       closeButtonElement.addEventListener('click', hideModal);
-      modal.appendChild(closeButtonElement);
+      //modal.appendChild(closeButtonElement);
 
       var pokName = document.createElement('h1');
       pokName.innerText = item.name;
