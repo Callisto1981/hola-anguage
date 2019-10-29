@@ -45,28 +45,28 @@ pokemonRepository = (function () {
 
     function $hideModal() {
       var $modalContainer = $('#modal-container');
+
       //$modalContainer.classList
       $('body').removeClass('is-visible');//Not sure if adding Body is correct?
       $hideModal.fadeOut(2000);//For a fadeout effect.
     }
 
-
     function addListItem(pokemon) {//function to show list of pokemon
-      var listItem = document.createElement('li');
-      var button = document.createElement('button');//the button
-      button.innerText = pokemon.name;
-      button.classList.add('pokemon-button');//the class/connection to the html
-      listItem.appendChild(button);
-      pokemonlist.appendChild(listItem);
-      button.addEventListener('click', function () {//the action of the button
+      var $listItem = $('li');
+      var $button = $('<button class="pokemon-button"></button>');//the button
+      $button.innerText = pokemon.name;
+      listItem.append($button);
+      pokemonlist.append($listItem);
+      $button.on('click', function (event) {//the action of the button
         showDetails(pokemon);
       });
     }
 
     function loadList() {
-      $.ajax('https://pokeapi.co/api/v2/pokemon', {dataType: 'json'}).then(function (responseJSON) {
+      $.ajax('https://pokeapi.co/api/v2/pokemon', { dataType: 'json' })
+      .then(function (responseJSON) {
         console.log(responsejson);
-      });/*.then(function (json) {
+      }).then(function (json) {
         json.results.forEach(function (item) {
           var pokemon = {
             name: item.name,
@@ -75,9 +75,9 @@ pokemonRepository = (function () {
           add(pokemon);
         });
       }).catch(function (error) {
-        console.error(error);
+        console.log('Caught an error:' + error.statusText);
       });
-    }*/
+    }
 
     function showDetails(item) {
       loadDetails(item).then(function () {
@@ -87,7 +87,7 @@ pokemonRepository = (function () {
 
     function loadDetails(item) {
       var url = item.detailsUrl;
-      return fetch(url).then(function (response) {
+      return $.ajax(url).then(function (details) {
         return response.json();
       }).then(function (details) {
         item.imageUrl = details.sprite.front_default;
