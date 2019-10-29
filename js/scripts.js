@@ -112,7 +112,7 @@ pokemonRepository = (function () {
         hideModal();
       }
     });
-    $modalContainer.addEventListener('click', (e) => {
+    $modalContainer.on('click', (e) => {
       var target = e.target;
       if (target === $modalContainer) {
         hideModal();
