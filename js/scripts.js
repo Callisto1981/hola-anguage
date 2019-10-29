@@ -2,7 +2,7 @@ pokemonRepository = (function () {
     var repository = [];
 
     function showModal(pokName, height) {
-      var $modalContainer = $('$modal-container');
+      var $modalContainer = $('#modal-container');
       $modalContainer.innerHTML = '';
 
       var $modal = $('<div class="modal"></div>');
