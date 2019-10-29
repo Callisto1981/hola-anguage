@@ -132,7 +132,7 @@ pokemonRepository = (function () {
 
   })();
 
-var pokemonList = document.querySelector('ul');
+var $pokemonList = $('ul');
 
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
