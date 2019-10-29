@@ -64,9 +64,9 @@ pokemonRepository = (function () {
     }
 
     function loadList() {
-      fetch('https://pokeapi.co/api/v2/pokemon').then(function (response) {
-        return response.json();
-      }).then(function (json) {
+      $.ajax('https://pokeapi.co/api/v2/pokemon', {dataType: 'json'}).then(function (responseJSON) {
+        console.log(responsejson);
+      });/*.then(function (json) {
         json.results.forEach(function (item) {
           var pokemon = {
             name: item.name,
@@ -77,7 +77,7 @@ pokemonRepository = (function () {
       }).catch(function (error) {
         console.error(error);
       });
-    }
+    }*/
 
     function showDetails(item) {
       loadDetails(item).then(function () {
@@ -140,7 +140,8 @@ pokemonRepository.loadList().then(function () {
   });
 });
 
-var bulbasaur = {
+//Old Code below:
+/*var bulbasaur = {
   name: 'bulbasaur',
   height: 7,
   types: ['grass', 'poison'],
@@ -160,4 +161,4 @@ var blastoise = {
 
 repository.forEach(function (cureentName) {
   console.log(currentName);
-});
+});*/
