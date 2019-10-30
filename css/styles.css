@@ -1,5 +1,28 @@
 
-html,
+header .row div {
+  background-color: pink;
+  border: 1px solid tomato;
+  height: 50px;
+}
+
+main .row div {
+  background-color: lightgreen;
+  border: 1px solid green;
+  height: 80px;
+}
+
+footer .row div {
+  background-color: lightyellow;
+  border: 1px solid orange;
+  height: 50px;
+}
+
+
+
+
+
+
+/*html,
 body {
   font-family: Arial, sans-serif;
 }
@@ -33,7 +56,7 @@ body {
 .pokemonButton,
 .modalButton {
   /*overwrites browser defaults and resets the border*/
-  border: none;
+  /*border: none;
   display: inline-block;
   width: 25%;
   color: #fff;
@@ -98,4 +121,4 @@ body {
 
 .modal p {
   margin-bottom: 0;
-}
+}*/
