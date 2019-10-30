@@ -17,7 +17,20 @@ footer .row div {
   height: 50px;
 }
 
+/*these are for hidding the modal or dropdown meny*/
+.visible {
+  visibility: visibile;
+}
+.invisible {
+  visibility: hidden;
+}
 
+.element {
+  @include invisible(visible);
+}
+.element {
+  @include invisible(hidden);
+}
 
 
 
