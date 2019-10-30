@@ -32,6 +32,9 @@ footer .row div {
   @include invisible(hidden);
 }
 
+.page-container {
+margin-top: 80px;
+}
 
 
 
