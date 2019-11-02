@@ -7,79 +7,85 @@
 
   <title>Pokedex</title>
   <link rel = "stylesheet" type = "text/css" href = "css/styles.css">
+</head>
 
   <body>
-    <!--<h1>POKEDEX</h1>
-    <ul class='pokemon-list'></ul>
-    <div id='modal-container'></div>-->
-    <h1 class='display-3 text-center'>Pokedex</h1><!--display size with centered text-->
+    <!--Nav bar----------------------------------->
+    <nav class='navbar navbar-expand-lg navbar-light bg-warning fixed-top'>
+      <a class='navbar-brand' href='#'>
+       <img src='Pokemon_logo.png' width='80' class='d-inline-block align-top' alt='Pokemon_logo'>
+      </a>
+      <!--Nav bar menu button----------------------->
+      <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav'
+      aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+      <span class='navbar-toggler-icon'></span>
+    </button>
+    <!--Nav bar menu button code finish----------->
 
-    <img src='' class='img-fluid img-thumbnail' alt='Responsive image'> <!--Needs image-->
+    <!--Nav bar dropdown menu/list------------------------->
+    <div class='collapse navbar-collapse' id='navbarNav'>
+      <ul class='navbar-nav mr-auto'>
 
-    <ul class='list-unstyled'></ul> <!--list with no bullets-->
+
+        <li class='nav-item active'>
+          <button type='button' class='btn btn-primary btn-lg active' aria-pressed='true'>Home</button>
+        </li>
+        <li class='nav-item'>
+          <button type='button' class='btn btn-primary btn-lg active' aria-pressed='true'>Big Pokemon</button>
+        </li>
+        <li class='nav-item'>
+          <button type='button' class='btn btn-primary btn-lg active' aria-pressed='true'>Little Pokemon</button>
+        </li>
+        <li class='nav-item'>
+          <button type='button' class='btn btn-primary btn-lg active' aria-pressed='true'>All Pokemon</button>
+        </li>
+        <!--dropdown meny button-->
+        <li class='nav-item dropdown'>
+          <button type='button' class='btn btn-primary btn-lg active dropdown-toggle' id='navbarDropdown' role='button' data-toggle='dropdown'
+          aria-haspopup='true' aria-expanded='false'>
+          Buy Pokemon!
+        </button>
+        <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+          <a class='dropdown-item' href='#'>Big Pokemon</a>
+          <a class='dropdwon-time' href='#'>Small Pokemon</a>
+          <div class='dropdown-divider'></div>
+          <a class='dropdown=item' href='#'>Pokemon Deals</a>
+        </div>
+        </li>
+
+    </ul>
+    <form class='form-inline my-2 my-lg-0'>
+      <input class='form-control mr-sm-2' type='search' placeholder='Search Pokemon Name' aria-label='Search'>
+      <button class='btn bg-white btn-outline-dark my-2 my-sm-0' type='submit'>Search</button>
+    </form>
+  </div>
+</nav>
+<!--Nav Bar End----------------------------------->
+
+<h1 class='display-3 text-center'>Pokedex</h1><!--display size with centered text-->
+    <div class='col'><img src='pokeball-pokemon-svgrepo-com.svg' width='200' class='img-fluid img-thumbnail' alt='Responsive image'> <!--Needs image-->
+    </div>
+
+<ul class='list-unstyled'></ul> <!--list with no bullets-->
     <p class="text-center">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.
       Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi.
       At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere.
       Cras mattis iudicium purus sit amet fermentum.</p>
 
+
+
+
+
+
+
       <div class='visible'></div><!--divs for hiding. Use for hiding modal or dropdown menu.-->
       <div class='invisible'></div>
 
 
-      <!--Nav bar----------------------------------->
-      <nav class='navbar navbar-expand-lg navbar-light bg-warning fixed-top'>
-        <a class='navbar-brand' href='#'>
-         <img src='js/Pokemon_logo.png' width='30' class='d-inline-block align-top' alt='Pokemon_logo'>
-        </a>
-        <!--Nav bar menu button----------------------->
-        <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav'
-        aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
-        <span class='navbar-toggler-icon'></span>
-      </button>
-      <!--Nav bar menu button code finish----------->
 
-      <!--Nav bar dropdown menu/list------------------------->
-      <div class='collapse navbar-collapse' id='navbarNav'>
-        <ul class='navbar-nav mr-auto'>
-
-
-          <li class='nav-item active'>
-            <button type='button' class='btn btn-primary btn-lg active' aria-pressed='true'>Home</button>
-          </li>
-          <li class='nav-item'>
-            <button type='button' class='btn btn-primary btn-lg active' aria-pressed='true'>Big Pokemon</button>
-          </li>
-          <li class='nav-item'>
-            <button type='button' class='btn btn-primary btn-lg active' aria-pressed='true'>Little Pokemon</button>
-          </li>
-          <li class='nav-item'>
-            <button type='button' class='btn btn-primary btn-lg active' aria-pressed='true'>All Pokemon</button>
-          </li>
-          <!--dropdown meny button-->
-          <li class='nav-item dropdown'>
-            <button type='button' class='btn btn-primary btn-lg active dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown'
-            aria-haspopup='true' aria-expanded='false'>
-            Buy Pokemon!
-          </button>
-          <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-            <a class='dropdown-item' href='#'>Big Pokemon</a>
-            <a class='dropdwon-time' href='#'>Small Pokemon</a>
-            <div class='dropdown-divider'></div>
-            <a class='dropdown=item' href='#'>Pokemon Deals</a>
-          </div>
-          </li>
-
-      </ul>
-      <form class='form-inline my-2 my-lg-0'>
-        <input class='form-control mr-sm-2' type='search' placeholder='Search Pokemon Name' aria-label='Search' alt='search box'>
-        <button class='btn bg-white btn-outline-dark my-2 my-sm-0' type='submit'>Search</button>
-      </form>
-    </div>
-  </nav>
-  <!--Nav Bar End----------------------------------->
 
 <!--Button for Modal-->
-<button type='button' class='btn btn-white' data-toggle='modal' data-target='#exampleModal'>
+<button type='button' class='btn btn-success' data-toggle='modal' data-target='#exampleModal'>
   Launch modal
 </button>
 
@@ -95,7 +101,7 @@ aria-hidden='true'><!--Dark background behind modal-->
         </button>
       </div>
       <div class='modal-body'>
-        ...........
+        <p>Modal info</p>
       </div>
       <div class='modal-footer'>
         <button type='button' class='btn btn-secondary' data-dismiss='modal'>
@@ -107,54 +113,5 @@ aria-hidden='true'><!--Dark background behind modal-->
   </div>
 </div>-->
 <!--Modal code Ends-->
-
-  <!--<header class='container'>
-    <div class='row'>
-      <div class='col-sm'></div>
-      <div class='col-sm'></div>
-      <div class='col-sm'></div>
-      <div class='col-sm'></div>
-    </div>
-  </header>
-
-  <main class='container'>
-    <div class='row'>
-      <div class='col-sm-1'></div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-1"></div>
-    </div>
-  </main>
-
-  <footer class='container'>
-    <div class='row'>
-      <div class='col-sm'></div>
-      <div class='col-sm'></div>
-      <div class='col-sm'></div>
-    </div>
-  </footer>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
-
-
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
-  crossorigin='anonymous'></script>
-  <script src="js/fetch.umd.js"></script>
-  <script src="js/promise-polyfill.js"></script>
-  <script src="js/scripts.js"></script>-->
-
 </body>
 </html>
