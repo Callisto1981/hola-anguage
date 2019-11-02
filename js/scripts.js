@@ -1,4 +1,4 @@
-/*pokemonRepository = (function () {
+pokemonRepository = (function () {
     var repository = [];
 
     function showModal(pokName, height) {
@@ -7,11 +7,13 @@
 
       var $modal = $('<div class="modal"></div>');
       $('body').append($modal);
+
       //modal.classList.add('modal');
       //$modalContainer.appendChild($modal);
 
       var $closeButtonElement = $('<button class="modal-close">Close</button>');
       $('body').append($closeButtonElement);
+
       //closeButtonElement.classList.add('modal-close');
       //closeButtonElement.innerText = 'Close';
 
@@ -26,12 +28,14 @@
 
       var $height = $('<p class="modal-height">Height: </p>');
       $('body').append($height);
+
       //height.innerText = height;
       //height.classList.add('modal-height');
       //modal.appendChild(height);
 
       var $pokImage = $('<img src= class="pokemon-img">');//Put actual apiUrl in src?
       $('body').append($pokImage);
+
       //pokImage.classList.add('pokemon-img');
       //pokImage.setAttribute('src', item.imageUrl);
       //modal.appendChild(pokImage);
@@ -41,7 +45,6 @@
     $('#show-modal').on('click', () => {
       showModal('Name', 'Content');
     });
-
 
     function $hideModal() {
       var $modalContainer = $('#modal-container');
@@ -119,7 +122,6 @@
       }
     });
 
-
     return {
       add: add,
       getAll: getAll,
@@ -139,26 +141,3 @@ pokemonRepository.loadList().then(function () {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-//Old Code below:
-/*var bulbasaur = {
-  name: 'bulbasaur',
-  height: 7,
-  types: ['grass', 'poison'],
-};
-
-var charizard = {
-  name: 'Charizard',
-  height: 1.7,
-  types: ['fire', 'flying'],
-};
-
-var blastoise = {
-  name: 'Blastoise',
-  height: 1.6,
-  types: ['water'],
-};
-
-repository.forEach(function (cureentName) {
-  console.log(currentName);
-});*/
