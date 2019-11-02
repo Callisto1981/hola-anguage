@@ -1,4 +1,4 @@
-pokemonRepository = (function () {
+/*pokemonRepository = (function () {
     var repository = [];
 
     function showModal(pokName, height) {
