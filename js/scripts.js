@@ -3,7 +3,7 @@ pokemonRepository = (function () {
     var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     var $pokemonList = $('ul');
 
-    function showModal(pokName, height) {
+    function showModal(item) {
       var $modalContainer = $('#exampleModal');
       $modalContainer.innerHTML = '';
 
@@ -36,7 +36,7 @@ pokemonRepository = (function () {
       //height.classList.add('modal-height');
       //modal.appendChild(height);
 
-      var $pokImage = $('<img src= class="pokemon-img">');//Put actual apiUrl in src?
+      var $pokImage = $('<img src="pokemon-img">');
       $('pokemon-img').append($pokImage);
 
       //pokImage.classList.add('pokemon-img');
