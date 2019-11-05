@@ -80,8 +80,8 @@ pokemonRepository = (function () {
           };
           add(pokemon);
         });
-      }).catch(function (error) {
-        console.error(error);
+      }).catch(function (e) {
+        console.error(e);
       });
     }
 
@@ -98,8 +98,8 @@ pokemonRepository = (function () {
       }).then(function (details) {
         item.imageUrl = details.sprite.front_default;
         item.height = details.height;
-      }).catch(function (error) {
-        console.error(error);
+      }).catch(function (e) {
+        console.error(e);
       });
     }
 
