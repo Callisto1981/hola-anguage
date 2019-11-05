@@ -37,7 +37,7 @@ pokemonRepository = (function () {
       //modal.appendChild(height);
 
       var $pokImage = $('<img src= class="pokemon-img">');//Put actual apiUrl in src?
-      $('div.pokemon-img').append($pokImage);
+      $('pokemon-img').append($pokImage);
 
       //pokImage.classList.add('pokemon-img');
       //pokImage.setAttribute('src', item.imageUrl);
