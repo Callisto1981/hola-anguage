@@ -86,7 +86,7 @@ pokemonRepository = (function () {
     }
 
     function showDetails(item) {
-      loadDetails(item).then(function () {
+      pokemonRepository.loadDetails(item).then(function () {
         showModal(item);
       });
     }
