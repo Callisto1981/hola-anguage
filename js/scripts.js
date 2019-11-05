@@ -70,9 +70,8 @@ pokemonRepository = (function () {
     }
 
     function loadList() {
-      $.ajax(apiUrl, { dataType: 'json' })
-      .then(function (responseJSON) {
-        return responsejson;
+      return $.ajax(apiUrl, { dataType: 'json' }).then(function (responseJSON) {
+        return responseJSON;
       }).then(function (json) {
         json.results.forEach(function (item) {
           var pokemon = {
@@ -82,7 +81,7 @@ pokemonRepository = (function () {
           add(pokemon);
         });
       }).catch(function (error) {
-        console.log('Caught an error:' + error.statusText);
+        console.error(error);
       });
     }
 
