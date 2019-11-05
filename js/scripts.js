@@ -58,8 +58,8 @@ pokemonRepository = (function () {
     }
 
     function addListItem(pokemon) {//function to show list of pokemon
-      var $listItem = $('li');
-      pokemonlist.append($listItem);
+      var $listItem = $('<li></li>');
+      $pokemonlist.append($listItem);
 
       var $button = $('<button class="pokemon-button"></button>');//the button
       $button.innerText = pokemon.name;
@@ -98,6 +98,7 @@ pokemonRepository = (function () {
       }).then(function (details) {
         item.imageUrl = details.sprite.front_default;
         item.height = details.height;
+        item.types = Object.keys(details.types);
       }).catch(function (e) {
         console.error(e);
       });
@@ -128,6 +129,7 @@ pokemonRepository = (function () {
     return {
       add: add,
       getAll: getAll,
+      search: search,
       addListItem: addListItem,
       loadList: loadList,
       loadDetails: loadDetails,
@@ -139,6 +141,6 @@ pokemonRepository = (function () {
 
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
-    pokemonRepository.addListItem(pokemon);
+    addListItem(pokemon);
   });
 });
