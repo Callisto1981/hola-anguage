@@ -36,8 +36,8 @@ pokemonRepository = (function () {
       //height.classList.add('modal-height');
       //modal.appendChild(height);
 
-      var $pokImage = $('<img src="pokemon-img">');
-      $('pokemon-img').append($pokImage);
+      var $pokImage = $('<img src="' + item.imageUrl + '">');
+      $('div.pokemon-img').html($pokImage);
 
       //pokImage.classList.add('pokemon-img');
       //pokImage.setAttribute('src', item.imageUrl);
@@ -94,8 +94,8 @@ pokemonRepository = (function () {
 
     function loadDetails(item) {
       var url = item.detailsUrl;
-      return $.ajax(url).then(function (details) {
-        return response.json();
+      return $.ajax(url, { dataType: 'json' }).then(function (responseJSON) {
+        return responseJSON;
       }).then(function (details) {
         item.imageUrl = details.sprite.front_default;
         item.height = details.height;
