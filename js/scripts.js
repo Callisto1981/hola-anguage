@@ -5,6 +5,7 @@ pokemonRepository = (function () {
 
     function showModal(item) {
       var $modalContainer = $('#exampleModal');
+      console.log($modalContainer)
       $modalContainer.innerHTML = '';
 
       var $modal = $('<div class="modal"></div>');
