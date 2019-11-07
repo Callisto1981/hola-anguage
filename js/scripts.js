@@ -1,11 +1,11 @@
 pokemonRepository = (function () {
     var repository = [];
-    var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    var apiUrl = '.https://pokeapi.co/api/v2/pokemon/?limit=150';
     var $pokemonList = $('ul');
+    var $modalContainer = ('#examplModal');
 
     function showModal(item) {
-      var $modalContainer = $('#exampleModal');
-      console.log($modalContainer)
+      var $modalContainer = $('#examplModal');//#exampleModal
       $modalContainer.innerHTML = '';
 
       var $modal = $('<div class="modal"></div>');
@@ -82,7 +82,7 @@ pokemonRepository = (function () {
           add(pokemon);
         });
       }).catch(function (e) {
-        console.error(e);
+        // console.error(e);
       });
     }
 
@@ -120,7 +120,7 @@ pokemonRepository = (function () {
         hideModal();
       }
     });
-    $modalContainer.on('click', (e) => {
+    $modalContainer = ('click', (e) => {
       var target = e.target;
       if (target === $modalContainer) {
         hideModal();
@@ -130,18 +130,16 @@ pokemonRepository = (function () {
     return {
       add: add,
       getAll: getAll,
-      search: search,
       addListItem: addListItem,
       loadList: loadList,
       loadDetails: loadDetails,
       showModal: showModal,
-      hideModal: hideModal,
     };
 
   })();
 
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
-    addListItem(pokemon);
+    pokemonRepository.addListItem(pokemon);
   });
 });
