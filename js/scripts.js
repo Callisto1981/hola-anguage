@@ -5,7 +5,7 @@ pokemonRepository = (function () {
     var $modalContainer = ('#examplModal');
 
     function showModal(item) {
-      var $modalContainer = $('#examplModal');//#exampleModal
+      var $modalContainer = $('#exampleModal');//#exampleModal
       $modalContainer.innerHTML = '';
 
       var $modal = $('<div class="modal"></div>');
@@ -39,6 +39,9 @@ pokemonRepository = (function () {
 
       var $pokImage = $('<img src="' + item.imageUrl + '">');
       $('div.pokemon-img').html($pokImage);
+
+      //$pokImage.attr('src', item.imageUrl);
+      //$modalContainer.append($pokImage);
 
       //pokImage.classList.add('pokemon-img');
       //pokImage.setAttribute('src', item.imageUrl);
