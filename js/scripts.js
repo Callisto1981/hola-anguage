@@ -57,7 +57,7 @@ pokemonRepository = (function () {
       $modalContainer = $('#exampleModal');
 
       //$modalContainer.classList
-      $('body').removeClass('is-visible');//Not sure if adding Body is correct?
+      $('body').removeClass('is-visible');
       $hideModal.fadeOut(2000);//For a fadeout effect.
     }
 
@@ -67,7 +67,7 @@ pokemonRepository = (function () {
 
       var $button = $('<button class="pokemon-button"></button>');//the button
       $button.innerText = pokemon.name;
-      listItem.append($button);
+      $listItem.append($button);
       $button.on('click', function (event) {//the action of the button
         showDetails(pokemon);
       });
@@ -134,11 +134,11 @@ pokemonRepository = (function () {
       add: add,
       getAll: getAll,
       addListItem: addListItem,
+      showDetails: showDetails,
       loadList: loadList,
       loadDetails: loadDetails,
       showModal: showModal,
     };
-
   })();
 
 pokemonRepository.loadList().then(function () {
