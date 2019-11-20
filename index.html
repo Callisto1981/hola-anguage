@@ -61,9 +61,13 @@
 </nav>
 <!--Nav Bar End----------------------------------->
 
-<h1 class='display-3 text-center'>Pokedex</h1><!--display size with centered text-->
-    <div class='col'><img src='pokeball-pokemon-svgrepo-com.svg' width='200' class='img-fluid img-thumbnail' alt='Responsive image'> <!--Needs image-->
-    </div>
+<h1 class='display-3'>Pokedex</h1><!--display size with centered text-->
+    <!--<div class='col'><img src='pokeball-pokemon-svgrepo-com.svg' width='200' class='img-fluid img-thumbnail' alt='Responsive image'>
+    </div>-->
+    <!--Button for Modal-->
+    <button type='button' class='btn btn-success' data-toggle='modal' data-target='#exampleModal'>
+      Launch modal
+    </button>
 
 <ul class='list-unstyled'></ul> <!--list with no bullets-->
     <p class="text-center">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.
@@ -74,10 +78,7 @@
       <div class='visible'></div><!--divs for hiding. Use for hiding modal or dropdown menu.-->
       <div class='invisible'></div>
 
-<!--Button for Modal-->
-<button type='button' class='btn btn-success' data-toggle='modal' data-target='#exampleModal'>
-  Launch modal
-</button>
+
 
 <!--Actual Modal-->
 <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel'
@@ -86,15 +87,17 @@ aria-hidden='true'><!--Dark background behind modal-->
     <div class='modal-content'>
       <div class='modal-header'>
         <h5 class='modal-title' id='exampleModalLabel'>POKEMON</h5>
+
         <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
           <span aria-hidden='true'>&times;</span>
         </button>
       </div>
-      <div class='exampleModal'>
-        <div class='pokemon-img'></div>
-        <!-- Pokemon image and info-->
-      </div>
+
       <div class='modal-footer'>
+        <div class='exampleModal'>
+          <div class='pokemon-img'></div>
+          <!-- Pokemon image and info-->
+        </div>
         <button type='button' class='btn btn-secondary' data-dismiss='modal'>
           Close
         </button>
